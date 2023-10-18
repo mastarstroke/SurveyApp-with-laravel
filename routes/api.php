@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\CacheController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -40,3 +41,6 @@ Route::post('/survey/{survey}/answer', [SurveyController::class, 'storeAnswer'])
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
+
+Route::get('caches', [CacheController::class, 'caches']);
+Route::get('clear-caches', [CacheController::class, 'clearCaches']);

@@ -55,6 +55,7 @@ class AuthController extends Controller
                 'error' => 'The Provided credentials are not correct'
             ], 422);
         }
+        
         $user = Auth::user();
         $token = $user->createToken('main')->plainTextToken;
 

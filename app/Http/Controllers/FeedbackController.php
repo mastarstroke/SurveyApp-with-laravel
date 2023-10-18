@@ -23,13 +23,13 @@ class FeedbackController extends Controller
         
         $user = $request->user();
         return FeedbackResource::collection(Survey::where('user_id', $user->id)
-        ->paginate(6));
+        ->paginate(10));
     }
 
 
     public function showFeedbackAnswer(Request $request, $id)
     {
-        // FeedBacks
+        // FeedBackAnswers
         return SurveyAnswerResource::collection(SurveyAnswers::where('survey_id', $id)
         ->latest('start_date')->paginate(6));
     }
